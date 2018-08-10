@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<p>Student name: ${student.firstName} ${student.lastName }</p>
+<p>Student name: ${student.firstName} ${student.lastName } from ${student.country}</p> <!--  Spring calls the student.getX() methods for these -->
 
 </body>
 </html>
