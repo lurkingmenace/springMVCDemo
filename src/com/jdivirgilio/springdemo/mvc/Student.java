@@ -1,11 +1,14 @@
 package com.jdivirgilio.springdemo.mvc;
 
+import java.util.LinkedHashMap;
+
 public class Student {
 
 	private String firstName;
 	private String lastName;
 	private String country;
 	private String programmingLanguage;
+	private LinkedHashMap<String, String> favoriteProgrammingLanguages = new LinkedHashMap<>();
 	
 	public Student(String first, String last) {
 		firstName = first;
@@ -13,6 +16,10 @@ public class Student {
 	}
 
 	public Student() {
+		favoriteProgrammingLanguages.put("Java", "Java");
+		favoriteProgrammingLanguages.put("C++", "C++");
+		favoriteProgrammingLanguages.put("Go", "Go");
+		favoriteProgrammingLanguages.put("JavaScript", "JavaScript");
 	}
 
 	public String getFirstName() {
@@ -46,5 +53,8 @@ public class Student {
 	public void setProgrammingLanguage(String programmingLanguage) {
 		this.programmingLanguage = programmingLanguage;
 	}
-
+	
+	public LinkedHashMap<String, String> getFavoriteProgrammingLanguages() {
+		return favoriteProgrammingLanguages;
+	}
 }
