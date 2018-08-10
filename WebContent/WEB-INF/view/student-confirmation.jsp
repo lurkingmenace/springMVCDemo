@@ -9,6 +9,6 @@
 <body>
 
 <p>Student name: ${student.firstName} ${student.lastName } from ${student.country}</p> <!--  Spring calls the student.getX() methods for these -->
-
+<p>Favorite Computer Programming Language: ${student.programmingLanguage}</p>
 </body>
 </html>
