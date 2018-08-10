@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,5 +17,8 @@
 		<ul></ul>
 		<a href="showForm">Hello World Form</a>
 	</div>
+	<a href="clash/showForm">Clash Form</a>
+	<br>
+	<a href="student/showform">Student Registration</a>
 </body>
 </html>
