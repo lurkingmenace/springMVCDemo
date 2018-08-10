@@ -1,0 +1,87 @@
+/* Two ways of organizing : specificity or order on the page
+   specificity is more popular
+*/
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 1em;
+	background: #642B73;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #C6426E, #642B73);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #C6426E, #642B73); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#container {
+	width: 360px; 
+	background-color: silver;
+	margin: 100px auto; /* centers */
+	box-shadow: 0 0 3px rgba(0,0,0,0.3);
+}
+
+h1 {
+	background-color: #2980b9; /* steelblue */
+	color: white;
+	text-transform: uppercase;
+	font-weight: normal;
+    margin: 0;
+    padding: 10px 20px;
+}
+
+.fas {
+	float: right;
+}
+
+input {
+	border: none;
+	font-size: 18px;
+	width: 100%;
+	background-color: silver;
+	padding: 13px 13px 13px 20px;
+	box-sizing: border-box; /* need moz, webkit, etc  for this entry */
+	margin: 0;
+	color: #2980b9;
+}
+
+input:focus { /* runs only when focused */
+	border: 3px #2980b9;
+	background-color: white;
+	outline: none; /* removes the border */
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+li { 
+	height: 40px;
+	background-color: white;
+	line-height: 40px;
+	color: 666;
+}
+
+li:nth-child(2n) {
+	background-color: silver;
+}
+
+li:hover span {
+	width: 40px;
+	opacity: 1;
+}
+
+span {
+	background-color: tomato;
+	height: 40px;
+	margin-right: 20px;
+	text-align: center;
+	color: white;
+	width: 0;
+	display: inline-block;
+	transition: 0.2s linear;
+	opacity: 0; /* the icon will show white on the colored lines if this isn't presetn */
+}
+
+.completed {
+	text-decoration: line-through;
+	color: gray;
+}
