@@ -19,7 +19,8 @@
 	 </form:select>
 	<p>Favorite Language:</p>
 	<form:radiobuttons path="programmingLanguage" items="${student.favoriteProgrammingLanguages}"/>
-	 
+	<p>Operating System:</p>
+	<form:checkboxes items="${student.favoriteOSs}" path="operatingSystems"/>
 	<input type="submit" value="Submit">
 
 	</form:form>
