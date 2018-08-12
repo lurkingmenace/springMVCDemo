@@ -17,8 +17,7 @@ public class CourseCodeConstraintValidator implements ConstraintValidator<Course
 	public boolean isValid(String courseCodeValue, ConstraintValidatorContext constraintValidatorContext) {
 		// courseCodeValue is the value of the Course Code: from the form
 		// constraintValidatorContext will contain extra error information
-		boolean bisValid = (courseCodeValue != null) && (courseCodeValue.startsWith(coursePrefix) && 
-				(courseCodeValue.length() > 4));
+		boolean bisValid = (courseCodeValue != null) && (courseCodeValue.startsWith(coursePrefix));
 		
 		return bisValid;
 	}

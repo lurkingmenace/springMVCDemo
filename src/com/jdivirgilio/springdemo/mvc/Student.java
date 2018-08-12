@@ -29,7 +29,8 @@ public class Student {
 	@Max(value=65, message="Aren't you too old for this")
 	private Integer age;
 	
-	@CourseCode
+	@CourseCode(value="POL", message="must start with POL")
+	@Size(min=6, message="must be at least 6 characters long")
 	private String courseCode;
 
 	@Pattern(regexp="^[0-9]{5}", message="only 5 digits")
