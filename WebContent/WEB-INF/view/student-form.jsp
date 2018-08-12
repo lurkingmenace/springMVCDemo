@@ -20,6 +20,9 @@
 	Age: <form:input path="age" />
 	<form:errors path="age" cssClass="error"/> <!--  Step 2: setup form errors -->
 	<br><br>
+	Postal Code: <form:input path="postalCode" />
+	<form:errors path="postalCode" cssClass="error"/> <!--  Step 2: setup form errors -->
+	<br><br>
 	Country: <form:select path="country">
 		<form:options items="${countryOps}" />
 	 </form:select>
