@@ -3,21 +3,25 @@ package com.jdivirgilio.springdemo.mvc;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
-import org.springframework.web.bind.annotation.InitBinder;
 
 public class Student {
 
 	// Step 1: define the fields required - Step 2 in student-formjsp
-	@NotNull(message="may not be empty")
+	@NotNull(message=" may not be empty")
 	@Size(min=1, message="required")
 	private String firstName;
 
-	@NotNull(message="may not be empty")
+	@NotNull(message=" may not be empty")
 	@Size(min=1, message="required") // This doesn't work for white-space in the field
 	private String lastName;
+	
+	@Min(value=18, message=" Minimum age must be 18")
+	@Max(value=65, message=" Aren't you too old for this")
+	private Integer age;
 
 	private String country;
 	private String programmingLanguage;
@@ -86,5 +90,16 @@ public class Student {
 	}
 
 	public void setOperatingSystems(ArrayList<String> operatingSystem) {
-		this.operatingSystems = operatingSystem;	}
+		this.operatingSystems = operatingSystem;	
+	}
+	
+	public Integer getAge() {
+		return age;
+	}
+
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+
+
 }

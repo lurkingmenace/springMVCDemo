@@ -17,6 +17,9 @@
 	Last Name:  <form:input path='lastName' />
 	<form:errors path="lastName" cssClass="error"/> <!--  Step 2: setup form errors -->
 	<br><br>
+	Age: <form:input path="age" />
+	<form:errors path="age" cssClass="error"/> <!--  Step 2: setup form errors -->
+	<br><br>
 	Country: <form:select path="country">
 		<form:options items="${countryOps}" />
 	 </form:select>
