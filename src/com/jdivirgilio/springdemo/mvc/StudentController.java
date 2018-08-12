@@ -5,9 +5,12 @@ import java.util.LinkedHashMap;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -16,13 +19,15 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/student")
 public class StudentController {
 	
+	Student student = new Student();
+	
 	@Value("#{countryOptions}")
 	private LinkedHashMap<String, String> countryOps = new LinkedHashMap<>();
 	
 	@RequestMapping("/showform")
 	public String showForm(Model model) {
 		
-		model.addAttribute("student", new Student());
+		model.addAttribute("student", student);
 		
 		model.addAttribute("countryOps", countryOps);
 		
@@ -37,7 +42,7 @@ public class StudentController {
 																		System.out.println(bindingResult.getModel().get(s).getClass());
 			});
 			ModelAndView modelView = new ModelAndView("student-form");
-			modelView.addObject("student", new Student());
+			modelView.addObject("student", student);
 			modelView.addObject("countryOps", countryOps);
 			return modelView; 
 		}
@@ -45,4 +50,11 @@ public class StudentController {
 			return new ModelAndView("student-confirmation");
 		}
 	}
+	
+	@InitBinder
+	public void initBinder(WebDataBinder dataBinder) {
+		StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
+		dataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
+	}
+	
 }
