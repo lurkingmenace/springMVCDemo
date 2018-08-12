@@ -41,6 +41,8 @@ public class StudentController {
 			bindingResult.getModel().keySet().stream().forEach((s) -> { System.out.println(s);
 																		System.out.println(bindingResult.getModel().get(s).getClass());
 			});
+			
+			System.out.println("binding result " + bindingResult);
 			ModelAndView modelView = new ModelAndView("student-form");
 			modelView.addObject("student", student);
 			modelView.addObject("countryOps", countryOps);
