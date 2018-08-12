@@ -28,7 +28,13 @@
             
     <!-- Properties file after this must inject the prop vals in to Spring controller -->
     <util:properties id="countryOptions" location="classpath:../countries.props" /> 
-    
+
+	<!--  Load custome message resource file -->
+	<bean 	id="messageSource" 
+			class="org.springframework.context.support.ResourceBundleMessageSource">
+			<property name="basenames" value="resources/messages" />
+	</bean>
+	 
 	<!-- Step 3: Add support for component scanning -->
 	<context:component-scan base-package="com.jdivirgilio.springdemo.mvc" />
 

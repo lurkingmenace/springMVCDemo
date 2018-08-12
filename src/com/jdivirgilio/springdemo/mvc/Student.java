@@ -20,6 +20,9 @@ public class Student {
 	@Size(min=1, message="required") // This doesn't work for white-space in the field
 	private String lastName;
 	
+	// Entering text in this field gives a conversion error.. 
+	// to fix this we will create a custom error message 
+	// Add a "resources" directory under the src directory
 	@Min(value=18, message="Minimum age must be 18")
 	@Max(value=65, message="Aren't you too old for this")
 	private Integer age;
