@@ -11,6 +11,10 @@
 <body>
 
 <p>Student name: ${student.firstName} ${student.lastName } from ${student.country}</p> <!--  Spring calls the student.getX() methods for these -->
+<p>Age: ${student.age}
+<p>Postal Code: ${student.postalCode}</p>
+<p>Country: ${student.country}</p>
+<p>Course Code: ${ student.courseCode }
 <p>Favorite Computer Programming Language: ${student.programmingLanguage}</p>
 <p>Favorite Operating System: </p>
 <!--  this is how you loop over a collection to display it -->

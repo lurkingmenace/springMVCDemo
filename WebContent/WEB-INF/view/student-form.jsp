@@ -23,6 +23,9 @@
 	Postal Code: <form:input path="postalCode" />
 	<form:errors path="postalCode" cssClass="error"/> <!--  Step 2: setup form errors -->
 	<br><br>
+	Course Code: <form:input path="courseCode" />
+	<form:errors path="courseCode" cssClass="error"/> <!--  Step 2: setup form errors -->
+	<br><br>
 	Country: <form:select path="country">
 		<form:options items="${countryOps}" />
 	 </form:select>

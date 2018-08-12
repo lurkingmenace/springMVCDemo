@@ -9,6 +9,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import com.jdivirgilio.springdemo.mvc.validation.CourseCode;
+
 public class Student {
 
 	// Step 1: define the fields required - Step 2 in student-formjsp
@@ -26,6 +28,9 @@ public class Student {
 	@Min(value=18, message="Minimum age must be 18")
 	@Max(value=65, message="Aren't you too old for this")
 	private Integer age;
+	
+	@CourseCode
+	private String courseCode;
 
 	@Pattern(regexp="^[0-9]{5}", message="only 5 digits")
 	private String postalCode;
@@ -114,6 +119,14 @@ public class Student {
 
 	public void setPostalCode(String postalCode) {
 		this.postalCode = postalCode;
+	}
+
+	public String getCourseCode() {
+		return courseCode;
+	}
+
+	public void setCourseCode(String courseCode) {
+		this.courseCode = courseCode;
 	}
 
 
