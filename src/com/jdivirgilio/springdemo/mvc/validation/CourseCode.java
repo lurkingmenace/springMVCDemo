@@ -15,7 +15,7 @@ public @interface CourseCode {
 	//@CourseCode(value="CSE", message="must start with CSE") Supporting this annotation
 	
 	// Define default course code
-	public String value() default "CSE";
+	public String[] value() default {"CSE"};
 	
 	// Define default error message 
 	public String message() default "must start with CSE";

@@ -6,7 +6,7 @@ import javax.validation.ConstraintValidatorContext;
 public class CourseCodeConstraintValidator implements ConstraintValidator<CourseCode, String> {
 	// @CourseCode(value="CSE", message="must start with CSE") Supporting this annotation
 	
-	private String coursePrefix;
+	private String[] coursePrefix;
 	
 	@Override
 	public void initialize(CourseCode courseCode) {
@@ -17,9 +17,16 @@ public class CourseCodeConstraintValidator implements ConstraintValidator<Course
 	public boolean isValid(String courseCodeValue, ConstraintValidatorContext constraintValidatorContext) {
 		// courseCodeValue is the value of the Course Code: from the form
 		// constraintValidatorContext will contain extra error information
-		boolean bisValid = (courseCodeValue != null) && (courseCodeValue.startsWith(coursePrefix));
-		
-		return bisValid;
+		boolean valid = false;
+		if (courseCodeValue != null) {
+			for(String courseCode : coursePrefix) {
+				if (courseCodeValue.startsWith(courseCode)) {
+					valid = true;
+					break;
+				}
+			}
+		}
+		return valid;
 	}
 
 }

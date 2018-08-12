@@ -29,7 +29,7 @@ public class Student {
 	@Max(value=65, message="Aren't you too old for this")
 	private Integer age;
 	
-	@CourseCode(value="POL", message="must start with POL")
+	@CourseCode(value= {"POL", "CSE"}, message="must start with CSE or POL")
 	@Size(min=6, message="must be at least 6 characters long")
 	private String courseCode;
 
