@@ -4,15 +4,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+	<meta charset="ISO-8859-1">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/student-form.css">
 <title>Student Registration Form</title>
 </head>
 <body>
 	<form:form action="processForm" modelAttribute="student">
 	
 	First Name: <form:input path="firstName" />
+	<form:errors path="firstName" cssClass="error"/> <!--  Step 2: setup form errors -->
 	<br><br>
 	Last Name:  <form:input path='lastName' />
+	<form:errors path="lastName" cssClass="error"/> <!--  Step 2: setup form errors -->
 	<br><br>
 	Country: <form:select path="country">
 		<form:options items="${countryOps}" />

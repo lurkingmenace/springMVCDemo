@@ -3,10 +3,20 @@ package com.jdivirgilio.springdemo.mvc;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class Student {
 
+	// Step 1: define the fields required - Step 2 in student-formjsp
+	@NotNull(message="required")
+	@Size(min=1, message="required")
 	private String firstName;
+
+	@NotNull(message="required")
+	@Size(min=1, message="required")
 	private String lastName;
+
 	private String country;
 	private String programmingLanguage;
 	private LinkedHashMap<String, String> favoriteProgrammingLanguages = new LinkedHashMap<>();
